@@ -1,0 +1,264 @@
+coinor-cbc (2.10.5+ds1-3) unstable; urgency=medium
+
+  * Rewrite d/watch to point to a working upstream git server.
+
+ -- Julien Puydt <jpuydt@debian.org>  Thu, 15 Oct 2020 08:17:42 +0200
+
+coinor-cbc (2.10.5+ds1-2) unstable; urgency=medium
+
+  * Complete the manpage so -thread's use is clearer (Closes: #598061)
+  * Bump dh-compat to 13.
+  * Declare d/rules doesn't require root.
+  * Better document find_Makefile_includes.patch.
+  * Mark the manpage as forwarded.
+
+ -- Julien Puydt <jpuydt@debian.org>  Wed, 02 Sep 2020 22:22:03 +0200
+
+coinor-cbc (2.10.5+ds1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Taking over maintainership. (Closes: #934084)
+  * Bump dh-compat to 12.
+  * Add Multi-Arch tags to the packages following hinter.
+
+ -- Julien Puydt <jpuydt@debian.org>  Fri, 19 Jun 2020 13:43:22 +0200
+
+coinor-cbc (2.10.4+repack1-1) unstable; urgency=medium
+
+  * QA upload.
+  * New upstream version 2.10.4+repack1
+  * Update Standards-Version to 4.5.0
+  * Changes to include BuildTools in source, so we can make use of
+    autoreconf during build.
+    - Change URI in d/watch
+    - Add folders to Files-Excluded in d/copyright
+    - Update path in d/coinor-libclp-doc.examples
+    - Remove without autoreconf and add override_dh_autoreconf in d/rules
+    - Update path for file in d/copyright
+  * Update version on runtime and build-dependencies
+  * Set upstream metadata fields: Bug-Database, Repository, Repository-Browse.
+    Update: Bug-Submit
+  * Add duplicated file in d/coinor-libcbc-doc.links
+  * Remove override_dh_fixperms from d/rules
+
+ -- Håvard Flaget Aasen <haavard_aasen@yahoo.no>  Thu, 20 Feb 2020 21:50:18 +0100
+
+coinor-cbc (2.10.3+repack1-1) unstable; urgency=medium
+
+  * QA upload
+  [ Debian Janitor ]
+  * Drop use of autotools-dev debhelper.
+  * Update standards version to 4.4.1, no changes needed.
+  * Set upstream metadata fields: Bug-Submit.
+  * Use secure URI in debian/watch.
+
+  [ Håvard Flaget Aasen ]
+  * New upstream version 2.10.3+repack1 closes: #927237
+  * Remove patch, fixed upstream.
+  * Change to debhelper-compat
+  * Add 'repack' in dversionmangle in debian/watch
+  * Update build- and runtime-dependencies.
+    - remove autotools-dev
+    - Update version on dependencies
+  * Remove debian/tmp/usr/share/coin from coinor-libcbc-dev.install
+  * Use source created jquery.js in *.doc package
+  * Fix spelling error i manpage.
+  * Add coinor-libcdc-doc.links to symlink duplicates
+  * In debian/rules add override_dh_fixperms to fix examples in *.doc package.
+  * In debian/rules add override_dh_strip to fix static library.
+
+ -- Håvard Flaget Aasen <haavard_aasen@yahoo.no>  Mon, 30 Dec 2019 18:05:19 +0100
+
+coinor-cbc (2.9.9+repack1-2) unstable; urgency=medium
+
+  * QA upload
+
+  [ Jelmer Vernooĳ ]
+  * Change priority extra to priority optional.
+
+  [ Anton Gladky ]
+  * [818407b] Set Standards-Version: 4.3.0. Update VCS-fields.
+  * [377243c] Orphan the package.
+
+ -- Anton Gladky <gladk@debian.org>  Wed, 07 Aug 2019 20:04:49 +0200
+
+coinor-cbc (2.9.9+repack1-1) unstable; urgency=medium
+
+  * Upload into unstable.
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 21 Aug 2017 21:34:44 +0200
+
+coinor-cbc (2.9.9+repack1-1~exp1) experimental; urgency=medium
+
+  * [f64a864] Update version numbers
+  * [4a17490] Set Standards-Version: 4.0.0
+  * [129492e] New upstream version 2.9.9+repack1. (Closes: #853350)
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 21 Aug 2017 10:05:50 +0200
+
+coinor-cbc (2.9.8+repack1-1~exp2) experimental; urgency=medium
+
+  * [0b158f8] Rename variable which is causing FTBFSs on mips* archs.
+
+ -- Anton Gladky <gladk@debian.org>  Tue, 06 Jun 2017 21:14:55 +0200
+
+coinor-cbc (2.9.8+repack1-1~exp1) experimental; urgency=medium
+
+  * [4da03d4] Update d/watch
+  * [f7174cf] Remove unneeded for the build files from the package.
+  * [b9b9c31] New upstream version 2.9.8+repack1
+  * [b3244ac] Set compat level 10.
+  * [4ab9c53] Remove dbg-package.
+  * [661a425] Use maximal hardening.
+  * [e75adb0] Remove applied by upstream patch.
+  * [7397876] Apply cme fix dpkg.
+  * [427b409] Update version numbers and entries in dependencies.
+              (Closes: #780049)
+  * [8e596a6] Remove Miles Lubin from uploaders. (Closes: #862817)
+  * [0e96c8d] Add myself to uploaders.
+
+ -- Anton Gladky <gladk@debian.org>  Mon, 05 Jun 2017 19:55:59 +0200
+
+coinor-cbc (2.8.12-1) unstable; urgency=low
+
+  * New upstream version
+  * Use dh_autotools-dev to update config.{sub,guess} for new ports.
+    - Thanks to Adam Conrad
+  * Remove shlibdeps patch incorporated upstream with configure option
+
+ -- Miles Lubin <miles.lubin@gmail.com>  Wed, 03 Sep 2014 18:14:02 -0400
+
+coinor-cbc (2.8.7-1) unstable; urgency=low
+
+  * New upstream version.
+  * Switch to upstream's packager-friendly tarballs.
+  * Bump standards version (no changes needed).
+  * Upload to unstable for transition.
+
+ -- Miles Lubin <miles.lubin@gmail.com>  Thu, 28 Nov 2013 00:07:47 -0500
+
+coinor-cbc (2.8.5-1) experimental; urgency=low
+
+  * New upstream release (Closes: #686578)
+    - License changed to EPL.
+    - SONAME version is now 3.
+  * New maintainer (Closes: #727237)
+    - Soeren Sonnenburg refused to relicense work under EPL.
+  * Move cbc executable to separate package: coinor-cbc.
+  * Bump to compat 9 (libraries now installed to multiarch dirs.).
+  * Remove outdated patches.
+  * Fix typo in cbc.1 (Closes: #706390)
+  * Add patch to fix building with pkg-config.
+  * Add patch to fix shared library dependencies.
+    - libOsiCbc still has unrecorded dependency on libCbc.
+  * Bump standards version.
+    - Updated copyright file to machine-readable format.
+  * Update (shorten) package descriptions.
+
+ -- Miles Lubin <miles.lubin@gmail.com>  Fri, 25 Oct 2013 14:34:52 -0400
+
+coinor-cbc (2.5.0-3) unstable; urgency=low
+
+  * New maintainer (Closes: #645087)
+    - Also add Christophe-Marie Duquesne to Uploaders
+    - Update Vcs-* fields
+  * Acknowledge NMU (Closes: #630252)
+  * patches/Makefile.diff: .la files are no longer shipped by some -dev
+    libraries. Link against them using -l instead.
+    (Closes: #669522 - Thanks to Vincent Legout for the patch)
+  * Enable hardening flags
+  * debian/control:
+    - Add dpkg-dev to Build-depends
+    - Remove useless build-dependencies coinor-libvol-dev and liblapack-dev
+    - Fix a spelling error ("allows one to")
+    - Deduplicate short package descriptions
+    - Bump Standards-Version to 3.9.3 (no changes needed)
+    - Wrap and sort fields
+  * debian/copyright:
+    - Remove trailing spaces
+
+ -- Etienne Millon <etienne.millon@gmail.com>  Tue, 26 Jun 2012 20:20:21 +0200
+
+coinor-cbc (2.5.0-2.3) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix "FTBFS: ../../Clp/src/CbcOrClpParam.cpp:1078:43: error: format
+    not a string literal and no format arguments: add patch
+    format-security.patch from Wolfram Sang.
+    (Closes: #643364)
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 21 Dec 2011 21:36:45 +0100
+
+coinor-cbc (2.5.0-2.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Add patch from upstream to fix a issue with a bad bound. (Closes: #624428)
+
+ -- Sune Vuorela <sune@debian.org>  Thu, 30 Jun 2011 13:39:07 +0200
+
+coinor-cbc (2.5.0-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Add zlib1g-dev and libbz2-dev to Build-Depends (Closes: #601039).
+  * Don't ship .la files (Closes: #621209).
+  * Replace NULL with 0 in cbcEventHandler.hpp (Closes: #625065).
+
+ -- Luk Claes <luk@debian.org>  Sun, 12 Jun 2011 20:04:10 +0200
+
+coinor-cbc (2.5.0-2) unstable; urgency=high
+
+  * Build depend on coinor-libcoinutils-dev (>= 2.6.4-2) (Closes: #595847)
+  * Setting urgency to high since this fixes a RC bug.
+  * Bump standards version to 3.9.1 (no changes required).
+  * Workaround cdbs problem and create doxygen doc once.
+
+ -- Soeren Sonnenburg <sonne@debian.org>  Tue, 07 Sep 2010 22:13:09 +0200
+
+coinor-cbc (2.5.0-1) unstable; urgency=low
+
+  * New upstream version.
+    - Bump standards version to 3.9.0 (no changes required).
+    - Build depend on clp >= 1.12.0 and osi >= 0.103.0.
+
+ -- Soeren Sonnenburg <sonne@debian.org>  Sat, 10 Jul 2010 09:07:06 +0200
+
+coinor-cbc (2.4.2-1) unstable; urgency=low
+
+  * New upstream version (no changes).
+
+ -- Soeren Sonnenburg <sonne@debian.org>  Thu, 27 May 2010 00:42:16 +0200
+
+coinor-cbc (2.4.1-1) unstable; urgency=low
+
+  * New upstream version
+    - Switch to dpkg-source 3.0 (quilt) format
+
+ -- Soeren Sonnenburg <sonne@debian.org>  Mon, 12 Apr 2010 10:33:27 +0200
+
+coinor-cbc (2.4.0-1) unstable; urgency=low
+
+  * New upstream version
+    - Build depend on newer cgl, clp, osi and coinutils (Closes: #571399).
+  * Bump standards version to 3.8.4 (no changes required).
+
+ -- Soeren Sonnenburg <sonne@debian.org>  Wed, 03 Mar 2010 09:08:26 +0100
+
+coinor-cbc (2.3.2-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Soeren Sonnenburg <sonne@debian.org>  Wed, 14 Oct 2009 06:39:31 +0200
+
+coinor-cbc (2.3.1-1) unstable; urgency=low
+
+  * New upstream version.
+    - Refreshed quilt patches.
+  * Override lintian warning.
+
+ -- Soeren Sonnenburg <sonne@debian.org>  Thu, 24 Sep 2009 15:53:57 +0200
+
+coinor-cbc (2.3.0-1) unstable; urgency=low
+
+  * Initial Release  (Closes: #501267)
+
+ -- Soeren Sonnenburg <sonne@debian.org>  Wed, 26 Aug 2009 16:57:29 +0200

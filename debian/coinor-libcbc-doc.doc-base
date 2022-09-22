@@ -1,0 +1,9 @@
+Document: cbc
+Title: cbc API documentation
+Author: John J. Forrest and Lou Hafer
+Abstract: Doxygen-generated API documentation for cbc.
+Section: Science/Mathematics
+
+Format: HTML
+Index: /usr/share/doc/coinor-libcbc-doc/html/index.html
+Files: /usr/share/doc/coinor-libcbc-doc/html/*.html

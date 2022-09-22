@@ -1,0 +1,142 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH CBC 1 "September 1st, 2020"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+cbc \- Cbc mixed integer programming solver
+.SH SYNOPSIS
+.B cbc
+.RI
+[
+options
+]
+filename
+.br
+.B cbc
+.RI
+[ commands ]
+.br
+.SH DESCRIPTION
+This manual page documents briefly the
+.B cbc
+command.
+.PP
+.\" TeX users may be more comfortable with the \fB<whatever>\fP and
+.\" \fI<whatever>\fP escape sequences to invode bold face and italics, 
+.\" respectively.
+\fBcbc\fP -- Cbc (Coin-or branch and cut) is an open-source mixed integer programming solver written in C++. 
+
+.SH OPTIONS
+When no options are given cbc enters the interactive command line
+mode.  Otherwise the program enters a batch mode, for which a summary
+of options is included below.  Note that the order of options in the
+command line of the cbc executable matter The command line of the cbc
+executable is parsed as if it were in the interactive mode. The
+take-away is that if your using the command line, and things aren't
+working as you think they should, try ordering the commands in the
+sequence you'd use if you were interactive mode.
+
+For a complete description, see 
+.B /usr/share/doc/coinor-libcbc-doc.
+.TP
+.B \-
+Read input from stdin instead of filename
+.TP
+.B \-csv
+The option "\-csv <filename>" causes cbc to print one line of key output statics in comma separated format in a file named <filename>. This option isn't currently included in the list of commands given by the "?" command in interactive mode.
+.TP
+.B \-threads <num_threads>
+Run cbc in parallel using <num_threads> many CPUs
+.br
+
+.SH INTERACTIVE MODE
+In interactive mode one command per line is expected (no leading \-).
+.TP
+.B ?
+lists all available commands
+.TP
+.B <command>?
+gives list of possibilities, if only one + explanation
+.TP
+.B <command>??
+adds explanation, if only one fuller help
+.TP
+.B <command>
+without value (where expected) gives current value
+.TP
+.B <command> <value>
+ sets value
+.br
+
+.SH AVAILABLE COMMANDS
+.TP
+.B Double parameters:
+dualB(ound)  dualT(olerance)  primalT(olerance)  primalW(eight)  
+.TP
+.B Branch and Cut double parameters:
+  allow(ableGap)  cuto(ff)  inc(rement)  inf(easibilityWeight)  integerT(olerance)  
+  preT(olerance)  ratio(Gap)  sec(onds)  
+.TP
+.B Integer parameters:
+  cpp(Generate)  force(Solution)  idiot(Crash)  maxF(actor)  maxIt(erations)  
+  output(Format)  slog(Level)  sprint(Crash)  
+.TP
+.B Branch and Cut integer parameters:
+  cutD(epth)  log(Level)  maxN(odes)  maxS(olutions)  passC(uts)  
+  passF(easibilityPump)  passT(reeCuts)  pumpT(une)  strong(Branching)  trust(PseudoCosts)  
+.TP
+.B Keyword parameters:
+  chol(esky)  crash  cross(over)  direction  dualP(ivot)  
+  error(sAllowed)  keepN(ames)  mess(ages)  perturb(ation)  presolve  
+  primalP(ivot)  printi(ngOptions)  scal(ing)  
+.TP
+.B Branch and Cut keyword parameters:
+  clique(Cuts)  combine(Solutions)  cost(Strategy)  cuts(OnOff)  Dins  
+  DivingS(ome)  DivingC(oefficient)  DivingF(ractional)  DivingG(uided)  DivingL(ineSearch)  
+  DivingP(seudoCost)  DivingV(ectorLength)  feas(ibilityPump)  flow(CoverCuts)  gomory(Cuts)  
+  greedy(Heuristic)  heur(isticsOnOff)  knapsack(Cuts)  lift(AndProjectCuts)  local(TreeSearch)  
+  mixed(IntegerRoundingCuts)  node(Strategy)  preprocess  probing(Cuts)  reduce(AndSplitCuts)  
+  residual(CapacityCuts)  Rens  Rins  round(ingHeuristic)  sos(Options)  
+  two(MirCuts)  
+.TP
+.B Actions or string parameters:
+  allS(lack)  barr(ier)  basisI(n)  basisO(ut)  directory  
+  dirSample  dirNetlib  dirMiplib  dualS(implex)  either(Simplex)  
+  end  exit  export  help  import  
+  initialS(olve)  max(imize)  min(imize)  netlib  netlibD(ual)  
+  netlibP(rimal)  netlibT(une)  primalS(implex)  printM(ask)  quit  
+  restore(Model)  saveM(odel)  saveS(olution)  solu(tion)  stat(istics)  
+  stop  unitTest  userClp  
+.TP
+.B Branch and Cut actions:
+  branch(AndCut)  doH(euristic)  miplib  prio(rityIn)  solv(e)  
+  strengthen  userCbc  
+.br
+.SH EXAMPLES
+cbc problem.mps
+
+cbc -thread 2 -import problem.mps -solve
+.br
+.SH SEE ALSO
+.BR glpsol (1), dsdp5 (1), clp (1)
+.PP
+This program is fully documented in the accompanying html documentation which
+can be found in \fB/usr/share/doc/coinor\-libcbc\-doc\fP if the coinor\-libcbc\-doc package is installed.
+.SH AUTHOR
+cbc was written by John J. Forrest <jjforre@us.ibm.com> et.al.
+.PP
+This manual page was written by Soeren Sonnenburg <sonne@debian.org>,
+for the Debian project (but may be used by others).

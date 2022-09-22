@@ -1,0 +1,12 @@
+Description: let Cbc/'s Makefile.* find their includes
+Author: Julien Puydt
+Forwarded: Debian-specific
+
+--- coinor-cbc.orig/Cbc/Makefile.am
++++ coinor-cbc/Cbc/Makefile.am
+@@ -158,4 +158,4 @@
+ # Files that are generated and should be cleaned with make distclean
+ DISTCLEANFILES =
+ 
+-include BuildTools/Makemain.inc
++include ../BuildTools/Makemain.inc

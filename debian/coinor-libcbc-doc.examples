@@ -1,0 +1,5 @@
+Cbc/examples/*.cpp
+Cbc/examples/*.hpp
+Cbc/examples/*.csv
+Cbc/examples/*.c
+Cbc/examples/Makefile

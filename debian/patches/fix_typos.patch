@@ -1,0 +1,46 @@
+Description: fix obvious typos in the code
+Author: Julien Puydt
+Forwarded: https://github.com/coin-or/Cbc/issues/314
+
+--- coinor-cbc.orig/Cbc/examples/modk.c
++++ coinor-cbc/Cbc/examples/modk.c
+@@ -155,7 +155,7 @@
+             }
+           default:
+             {
+-              fprintf( stderr, "unknow sense!");
++              fprintf( stderr, "unknown sense!");
+               abort();
+             }
+         }
+--- coinor-cbc.orig/Cbc/src/CbcHeuristicDW.cpp
++++ coinor-cbc/Cbc/src/CbcHeuristicDW.cpp
+@@ -457,7 +457,7 @@
+     }
+   }
+   if (numberNoMaster) {
+-    sprintf(dwPrint, "*** %d blocks have no elements in master - can be solved seperately",
++    sprintf(dwPrint, "*** %d blocks have no elements in master - can be solved separately",
+       numberNoMaster);
+     model_->messageHandler()->message(CBC_FPUMP1, model_->messages())
+       << dwPrint
+--- coinor-cbc.orig/Cbc/src/Cbc_C_Interface.cpp
++++ coinor-cbc/Cbc/src/Cbc_C_Interface.cpp
+@@ -1376,7 +1376,7 @@
+     rowLB = rhs;
+     break;
+   default:
+-    fprintf(stderr, "unknow row sense %c.", toupper(sense));
++    fprintf(stderr, "unknown row sense %c.", toupper(sense));
+     abort();
+   }
+   solver->addRow(nz, cols, coefs, rowLB, rowUB);
+@@ -1735,7 +1735,7 @@
+     orc.setLb(rhs);
+     break;
+   default:
+-    fprintf(stderr, "unknow row sense %c.", toupper(sense));
++    fprintf(stderr, "unknown row sense %c.", toupper(sense));
+     abort();
+   }
+ 
