@@ -1,3 +1,9 @@
+coinor-cbc (2.10.5+ds1-3deepin0) unstable; urgency=medium
+
+  * No source change upload against GCC 12.
+
+ -- Tianyu Chen <sweetyfish@deepin.org>  Thu, 19 Sep 2024 22:43:45 +0800
+
 coinor-cbc (2.10.5+ds1-3) unstable; urgency=medium
 
   * Rewrite d/watch to point to a working upstream git server.
